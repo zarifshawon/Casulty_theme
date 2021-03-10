@@ -169,17 +169,17 @@ var KTAddUser = function () {
 							}
 						}
 					},
-					language: {
+					service_type: {
 						validators: {
 							notEmpty: {
-								message: 'Please select a language'
+								message: 'Please select a Service Type'
 							}
 						}
 					},
-					timezone: {
+					department: {
 						validators: {
 							notEmpty: {
-								message: 'Please select a timezone'
+								message: 'Please select a Department'
 							}
 						}
 					}
