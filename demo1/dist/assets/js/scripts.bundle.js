@@ -824,7 +824,7 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 
 "use strict";
 
-// Component Definition 
+// Component Definition
 var KTDialog = function(options) {
     // Main object
     var the = this;
@@ -1219,7 +1219,7 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 
 "use strict";
 
-// Component Definition 
+// Component Definition
 var KTImageInput = function(elementId, options) {
     // Main object
     var the = this;
@@ -9346,7 +9346,7 @@ var KTLayoutChat = function () {
 		html += '		<a href="#" class="text-dark-75 text-hover-primary font-weight-bold font-size-h6">You</a>';
 		html += '	</div>';
 		html += '	<div class="symbol symbol-circle symbol-40 ml-3">';
-		html += '		<img alt="Pic" src="assets/media/users/300_12.jpg"/>';
+		html += '		<img alt="Pic" src="assets/media/users/300_21.jpg"/>';
 		html += '	</div>';
 		html += '</div>';
 		html += '<div class="mt-2 rounded p-5 bg-light-primary text-dark-50 font-weight-bold font-size-lg text-right max-w-400px">' + textarea.value + '</div>';
@@ -9371,7 +9371,7 @@ var KTLayoutChat = function () {
 			html += '		<img alt="Pic" src="assets/media/users/300_12.jpg"/>';
 			html += '	</div>';
 			html += '	<div>';
-			html += '		<a href="#" class="text-dark-75 text-hover-primary font-weight-bold font-size-h6">Matt Pears</a>';
+			html += '		<a href="#" class="text-dark-75 text-hover-primary font-weight-bold font-size-h6">Maruf Hasan</a>';
 			html += '		<span class="text-muted font-size-sm">Just now</span>';
 			html += '	</div>';
 			html += '</div>';
@@ -10803,7 +10803,7 @@ var KTLayoutHeaderMenu = function() {
 				state: 'mobile-toggle-active'
 			}
 		});
-		
+
 		_menuObject = new KTMenu(_menuElement, {
 			submenu: {
 				desktop: 'dropdown',

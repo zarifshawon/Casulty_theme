@@ -199,7 +199,21 @@ var KTAddUser = function () {
 			_formEl,
 			{
 				fields: {
-					address1: {
+					payment: {
+						validators: {
+							notEmpty: {
+								message: 'Payment type is required'
+							}
+						}
+					},
+					name: {
+						validators: {
+							notEmpty: {
+								message: 'Name is required'
+							}
+						}
+					},
+					address: {
 						validators: {
 							notEmpty: {
 								message: 'Address is required'
