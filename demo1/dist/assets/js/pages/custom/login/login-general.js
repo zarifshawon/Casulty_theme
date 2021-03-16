@@ -57,13 +57,15 @@ var KTLogin = function() {
                     swal.fire({
 		                text: "All is cool! Now you submit this form",
 		                icon: "success",
+                    hackref:"demo1\dist\index.html",
 		                buttonsStyling: false,
 		                confirmButtonText: "Ok, got it!",
                         customClass: {
     						confirmButton: "btn font-weight-bold btn-light-primary"
     					}
 		            }).then(function() {
-						KTUtil.scrollTop();
+						// KTUtil.scrollTop();
+            window.location.replace('index.html');
 					});
 				} else {
 					swal.fire({
