@@ -9,6 +9,7 @@ var KTLogin = function() {
         var form = 'kt_login_' + form + '_form';
 
         _login.removeClass('login-forgot-on');
+        _login.removeClass('login-otp-on');
         _login.removeClass('login-signin-on');
         _login.removeClass('login-signup-on');
 
@@ -227,9 +228,11 @@ var KTLogin = function() {
         $('#kt_login_forgot_submit').on('click', function (e) {
             e.preventDefault();
 
+
             validation.validate().then(function(status) {
 		        if (status == 'Valid') {
                     // Submit form
+                    _showForm('signin');
                     KTUtil.scrollTop();
 				} else {
 					swal.fire({
@@ -254,6 +257,65 @@ var KTLogin = function() {
             _showForm('signin');
         });
     }
+    var _handleOtpForm = function(e) {
+        var validation;
+
+        // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
+        validation = FormValidation.formValidation(
+      KTUtil.getById('kt_login_otp_form'),
+      {
+        fields: {
+          email: {
+            validators: {
+              notEmpty: {
+                message: 'Email address is required'
+              },
+                            emailAddress: {
+                message: 'The value is not a valid email address'
+              }
+            }
+          }
+        },
+        plugins: {
+          trigger: new FormValidation.plugins.Trigger(),
+          bootstrap: new FormValidation.plugins.Bootstrap()
+        }
+      }
+    );
+
+        // Handle submit button
+        $('#kt_login_forgot_submit').on('click', function (e) {
+            e.preventDefault();
+
+
+            validation.validate().then(function(status) {
+            if (status == 'Valid') {
+                    // Submit form
+                    _showForm('signin');
+                    KTUtil.scrollTop();
+        } else {
+          swal.fire({
+                    text: "Sorry, looks like there are some errors detected, please try again.",
+                    icon: "error",
+                    buttonsStyling: false,
+                    confirmButtonText: "Ok, got it!",
+                        customClass: {
+                confirmButton: "btn font-weight-bold btn-light-primary"
+              }
+                }).then(function() {
+            KTUtil.scrollTop();
+          });
+        }
+        });
+        });
+
+        // Handle cancel button
+        $('#kt_login_forgot_cancel').on('click', function (e) {
+            e.preventDefault();
+
+            _showForm('signin');
+        });
+    }
 
     // Public Functions
     return {
@@ -264,6 +326,7 @@ var KTLogin = function() {
             _handleSignInForm();
             _handleSignUpForm();
             _handleForgotForm();
+            _handleOtpForm();
         }
     };
 }();
